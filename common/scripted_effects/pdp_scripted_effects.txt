@@ -2,11 +2,12 @@
 # pdp_predetermined_policies game rule. Called once from on_game_started_after_lobby.
 #
 # The chose_* variables are interest-group scoped in vanilla: they are set on the one
-# interest group that has committed to a path, which suppresses neutral leaders for that
-# IG and keeps its matching political movements from disbanding. This effect seats each
-# marker on the interest group vanilla itself uses for that path — the Trade Unions for the
-# left-wing paths, the Armed Forces for the right-wing paths — both of which exist in
-# practically every country. The ?= guard skips any country that happens to lack the IG.
+# interest group that has committed to a path. On that IG the base game cuts the leader
+# weight of every off-path ideology — moderates included — to a tenth, so the group keeps
+# putting forward leaders of the chosen path. This effect seats each marker on an interest
+# group nearly every country has: the Trade Unions for the left-wing paths, exactly as
+# vanilla does, and the Armed Forces for the right-wing paths, a stand-in for the governing
+# IG vanilla would otherwise pick out dynamically. The ?= guard skips any country lacking the IG.
 pdp_apply_predetermined_policies = {
 	if = {
 		limit = { has_game_rule = pdp_vanguardism }
