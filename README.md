@@ -4,7 +4,7 @@
 
 ## The idea
 
-Victoria 3 quietly keeps track of when a nation commits to a radical ideology. The moment a country picks its path, the game plants a hidden marker on the interest group that carried it there — the Trade Unions turning communist, the Armed Forces turning fascist, and so on. Normally those markers appear on their own, deep into a campaign, and you never see them coming.
+Victoria 3 quietly keeps track of when a nation commits to a radical ideology. The moment a country picks its path, the game plants a hidden marker on the interest group that carried it there — the Trade Unions turning communist, a governing faction turning fascist, and so on. Normally those markers appear on their own, deep into a campaign, and you never see them coming.
 
 This mod hands you the pen. Add a single game rule in the lobby, choose one ideology, and every AI nation is seeded with that same marker from day one. Pick **Communism** and the workers' movements of the world are already yours to court or crush; pick **Fascism** and you know exactly where the storm is coming from. Either way, you start the game knowing who your friends and your enemies are going to be.
 
@@ -26,13 +26,14 @@ Your own nation is never touched — you always choose your own path. In multipl
 
 ## How it works
 
-The chosen marker is applied once, right after the lobby closes, to every non-player country. Because the base game keeps these `chose_*` markers on interest groups rather than on countries, the mod seats each one where vanilla would: the left-wing paths on the **Trade Unions**, the right-wing paths on the **Armed Forces** — the two interest groups that exist in almost every nation. Any country that somehow lacks the group is simply skipped.
+The chosen marker is applied once, right after the lobby closes, to every non-player country. Because the base game keeps these `chose_*` markers on interest groups rather than on countries, the mod seats each one on an interest group nearly every nation has: the left-wing paths on the **Trade Unions** — exactly where vanilla puts them — and the right-wing paths on the **Armed Forces**, a dependable stand-in for the governing group vanilla would otherwise pick out for itself. Any country that somehow lacks the group is simply skipped.
 
-A marked interest group stops producing neutral leaders and holds its matching political movements together — the very levers the base game pulls when a country turns on its own. So the world drifts toward the path you chose over the years of a campaign; it does not flip overnight.
+A marked interest group turns away from path-neutral moderates: vanilla cuts the leader weight of every off-path stance there — the moderates included — to a tenth, so the group keeps putting forward leaders of the ideology you chose. That is the same lever the base game pulls when a country radicalizes on its own, so the world leans toward the path you picked over the years of a campaign; it does not flip overnight.
 
 ## Compatibility
 
-- Adds one game rule, one on-action, and one scripted effect. No new events, no overwritten vanilla files.
+- Built for the Victoria 3 **1.13** release line.
+- Adds one game rule, one scripted effect, and one on-action hook. No new events, no overwritten vanilla files.
 - The default **Vanilla** setting does nothing, so the mod stays completely inert until you switch it on.
 - Works alongside any mod that leaves the vanilla ideology-path mechanic in place.
 - Deterministic and multiplayer-synchronized.
