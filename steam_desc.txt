@@ -1,0 +1,49 @@
+[h1]Pre-Determined Policies[/h1]
+
+[b]A game-rule mod for Victoria 3[/b] that decides, before the campaign even begins, which way every AI country will lean — so the political map is something you can plan around instead of something you discover the hard way.
+
+[h2]The idea[/h2]
+
+Victoria 3 quietly keeps track of when a nation commits to a radical ideology. The moment a country picks its path, the game plants a hidden marker on the interest group that carried it there — the Trade Unions turning communist, a governing faction turning fascist, and so on. Normally those markers appear on their own, deep into a campaign, and you never see them coming.
+
+This mod hands you the pen. Add a single game rule in the lobby, choose one ideology, and every AI nation is seeded with that same marker from day one. Pick [b]Communism[/b] and the workers' movements of the world are already yours to court or crush; pick [b]Fascism[/b] and you know exactly where the storm is coming from. Either way, you start the game knowing who your friends and your enemies are going to be.
+
+[h2]Using it[/h2]
+
+Open the [b]Game Rules[/b] panel when you set up a game and pick one option:
+
+| Option | Effect |
+| --- | --- |
+| [b]Vanilla[/b] [url=default]i[/url][/i] | Nothing is prescribed. Every country finds its own way, exactly as in the base game. |
+| [b]Vanguardism[/b] | Every AI country's [b]Trade Unions[/b] commit to the Vanguardist path. |
+| [b]Communism[/b] | Every AI country's [b]Trade Unions[/b] commit to the Communist path. |
+| [b]Anarchism[/b] | Every AI country's [b]Trade Unions[/b] commit to the Anarchist path. |
+| [b]Fascism[/b] | Every AI country's [b]Armed Forces[/b] commit to the Fascist path. |
+| [b]Ethno-Nationalism[/b] | Every AI country's [b]Armed Forces[/b] commit to the Ethno-Nationalist path. |
+| [b]Conservatism[/b] | Every AI country's [b]Armed Forces[/b] commit to the Conservative path. |
+
+Your own nation is never touched — you always choose your own path. In multiplayer, every human player is left free.
+
+[h2]How it works[/h2]
+
+The chosen marker is applied once, right after the lobby closes, to every non-player country. Because the base game keeps these [code]chose_*[/code] markers on interest groups rather than on countries, the mod seats each one on an interest group nearly every nation has: the left-wing paths on the [b]Trade Unions[/b] — exactly where vanilla puts them — and the right-wing paths on the [b]Armed Forces[/b], a dependable stand-in for the governing group vanilla would otherwise pick out for itself. Any country that somehow lacks the group is simply skipped.
+
+A marked interest group turns away from path-neutral moderates: vanilla cuts the leader weight of every off-path stance there — the moderates included — to a tenth, so the group keeps putting forward leaders of the ideology you chose. That is the same lever the base game pulls when a country radicalizes on its own, so the world leans toward the path you picked over the years of a campaign; it does not flip overnight.
+
+[h2]Compatibility[/h2]
+
+[list]
+[*]Built for the Victoria 3 [b]1.13[/b] release line.
+[*]Adds one game rule, one scripted effect, and one on-action hook. No new events, no overwritten vanilla files.
+[*]The default [b]Vanilla[/b] setting does nothing, so the mod stays completely inert until you switch it on.
+[*]Works alongside any mod that leaves the vanilla ideology-path mechanic in place.
+[*]Deterministic and multiplayer-synchronized.
+[/list]
+
+[h2]Why it exists[/h2]
+
+Half the fun of a grand-strategy campaign is having someone to root for and someone to root against. Vanilla makes you wait a few decades to find out which is which. This is for players who would rather set the stage first and then go to war with it.
+
+[h2]Tweaking the interest groups[/h2]
+
+The left/right split above is a design choice, not a rule the base game enforces — vanilla seats the right-wing markers on whichever governing interest group already leans that way, and none exists at game start. If you would rather give each right-wing path its own power base (Fascism on the Armed Forces, Ethno-Nationalism on the Petty Bourgeoisie, Conservatism on the Landowners), it is a one-line change per option in [code]common/scripted_effects/pdp_scripted_effects.txt[/code].
