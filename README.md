@@ -1,45 +1,46 @@
 # Pre-Determined Policies
 
-**A game-rule mod for Victoria 3** that lets you decide, before the campaign begins, which ideological path every AI country will follow — turning the political map into something you can plan around.
+**A game-rule mod for Victoria 3** that decides, before the campaign even begins, which way every AI country will lean — so the political map is something you can plan around instead of something you discover the hard way.
 
-## Overview
+## The idea
 
-Victoria 3 already tracks when a country commits to a radical ideology: the game plants a hidden `chose_*` marker on the interest group that has picked its path (the Trade Unions turning communist, the Armed Forces turning fascist, and so on). Normally these markers appear organically, mid-campaign, and you never know in advance where the world is heading.
+Victoria 3 quietly keeps track of when a nation commits to a radical ideology. The moment a country picks its path, the game plants a hidden marker on the interest group that carried it there — the Trade Unions turning communist, the Armed Forces turning fascist, and so on. Normally those markers appear on their own, deep into a campaign, and you never see them coming.
 
-This mod adds a single game rule — **Pre-Determined Policies** — that seeds those same markers on every AI country from the very first day. Pick one ideology in the lobby and the whole AI world is nudged down that road, so you start the game already knowing who your natural friends and enemies will be.
+This mod hands you the pen. Add a single game rule in the lobby, choose one ideology, and every AI nation is seeded with that same marker from day one. Pick **Communism** and the workers' movements of the world are already yours to court or crush; pick **Fascism** and you know exactly where the storm is coming from. Either way, you start the game knowing who your friends and your enemies are going to be.
 
-## The game rule
+## Using it
 
-Set it in the **Game Rules** panel when you create a game. One option is active at a time.
+Open the **Game Rules** panel when you set up a game and pick one option:
 
-| Option | What it does |
+| Option | Effect |
 | --- | --- |
-| **Vanilla** *(default)* | Nothing is prescribed. Interest groups choose their own path exactly as in the base game. |
-| **Vanguardism** | Every AI country's **Trade Unions** are locked onto the Vanguardist path. |
-| **Communism** | Every AI country's **Trade Unions** are locked onto the Communist path. |
-| **Anarchism** | Every AI country's **Trade Unions** are locked onto the Anarchist path. |
-| **Fascism** | Every AI country's **Armed Forces** are locked onto the Fascist path. |
-| **Ethno-Nationalism** | Every AI country's **Armed Forces** are locked onto the Ethno-Nationalist path. |
-| **Conservatism** | Every AI country's **Armed Forces** are locked onto the Conservative path. |
+| **Vanilla** *(default)* | Nothing is prescribed. Every country finds its own way, exactly as in the base game. |
+| **Vanguardism** | Every AI country's **Trade Unions** commit to the Vanguardist path. |
+| **Communism** | Every AI country's **Trade Unions** commit to the Communist path. |
+| **Anarchism** | Every AI country's **Trade Unions** commit to the Anarchist path. |
+| **Fascism** | Every AI country's **Armed Forces** commit to the Fascist path. |
+| **Ethno-Nationalism** | Every AI country's **Armed Forces** commit to the Ethno-Nationalist path. |
+| **Conservatism** | Every AI country's **Armed Forces** commit to the Conservative path. |
 
-Only **non-player** countries are affected — your own nation always chooses its own path. In multiplayer every human player is left free.
+Your own nation is never touched — you always choose your own path. In multiplayer, every human player is left free.
 
 ## How it works
 
-The chosen marker is applied once, from the vanilla `on_game_started_after_lobby` hook, to every non-player country. Each `chose_*` variable is interest-group scoped in the base game, so the mod seats it on the interest group vanilla itself associates with that path:
+The chosen marker is applied once, right after the lobby closes, to every non-player country. Because the base game keeps these `chose_*` markers on interest groups rather than on countries, the mod seats each one where vanilla would: the left-wing paths on the **Trade Unions**, the right-wing paths on the **Armed Forces** — the two interest groups that exist in almost every nation. Any country that somehow lacks the group is simply skipped.
 
-- **Left-wing paths** (Vanguardism, Communism, Anarchism) → the **Trade Unions**.
-- **Right-wing paths** (Fascism, Ethno-Nationalism, Conservatism) → the **Armed Forces**.
-
-Both interest groups exist in practically every country, so the rule reaches nearly the whole world; any country that happens to lack the interest group is simply skipped. Marking an interest group suppresses its neutral leaders and keeps its matching political movements from disbanding — the same levers vanilla uses when a country picks a path on its own — so the affected nations drift toward the prescribed ideology over the course of the campaign rather than flipping overnight.
+A marked interest group stops producing neutral leaders and holds its matching political movements together — the very levers the base game pulls when a country turns on its own. So the world drifts toward the path you chose over the years of a campaign; it does not flip overnight.
 
 ## Compatibility
 
-- Adds one game rule, one on-action and one scripted effect; adds no events and overrides no vanilla files.
-- The default **Vanilla** option changes nothing, so the mod is inert until you deliberately switch it on.
-- Compatible with any mod that does not remove the vanilla `chose_*` ideology-path mechanic.
-- Multiplayer-synchronized and deterministic.
+- Adds one game rule, one on-action, and one scripted effect. No new events, no overwritten vanilla files.
+- The default **Vanilla** setting does nothing, so the mod stays completely inert until you switch it on.
+- Works alongside any mod that leaves the vanilla ideology-path mechanic in place.
+- Deterministic and multiplayer-synchronized.
 
-## Note on which interest group
+## Why it exists
 
-The left/right split above is a design choice, not a hard vanilla rule: the base game seats the right-wing markers on whichever government interest group already leans that way, which does not exist yet at game start. If you would rather spread the right-wing paths across distinct power bases (Fascism on the Armed Forces, Ethno-Nationalism on the Petty Bourgeoisie, Conservatism on the Landowners), it is a one-line change per option in `common/scripted_effects/pdp_scripted_effects.txt`.
+Half the fun of a grand-strategy campaign is having someone to root for and someone to root against. Vanilla makes you wait a few decades to find out which is which. This is for players who would rather set the stage first and then go to war with it.
+
+## Tweaking the interest groups
+
+The left/right split above is a design choice, not a rule the base game enforces — vanilla seats the right-wing markers on whichever governing interest group already leans that way, and none exists at game start. If you would rather give each right-wing path its own power base (Fascism on the Armed Forces, Ethno-Nationalism on the Petty Bourgeoisie, Conservatism on the Landowners), it is a one-line change per option in `common/scripted_effects/pdp_scripted_effects.txt`.
