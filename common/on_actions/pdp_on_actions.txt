@@ -1,0 +1,12 @@
+﻿# Extend the vanilla on_game_started_after_lobby hook. The on_actions list merges
+# additively across files, whereas a second effect = {} block would clash with vanilla's
+# own (only one effect survives), so the work is delegated to a sub-on-action.
+on_game_started_after_lobby = {
+	on_actions = { on_game_started_after_lobby_pdp }
+}
+
+on_game_started_after_lobby_pdp = {
+	effect = {
+		pdp_apply_predetermined_policies = yes
+	}
+}

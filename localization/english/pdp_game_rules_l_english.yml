@@ -1,0 +1,23 @@
+﻿l_english:
+  rule_pdp_predetermined_policies: "Pre-Determined Policies"
+
+  setting_pdp_vanilla: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_pdp_vanilla_desc #high Vanilla#!#!#!"
+  setting_pdp_vanilla_desc: "Nothing is prescribed. Every $concept_country$ steers its own $concept_interest_group$ toward whichever ideological path it chooses, exactly as in the base game."
+
+  setting_pdp_vanguardism: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_pdp_vanguardism_desc #high Vanguardism#!#!#!"
+  setting_pdp_vanguardism_desc: "Every AI $concept_country$ has its $ig_trade_unions$ locked onto the Vanguardist path from the start of the game."
+
+  setting_pdp_communism: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_pdp_communism_desc #high Communism#!#!#!"
+  setting_pdp_communism_desc: "Every AI $concept_country$ has its $ig_trade_unions$ locked onto the Communist path from the start of the game."
+
+  setting_pdp_anarchism: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_pdp_anarchism_desc #high Anarchism#!#!#!"
+  setting_pdp_anarchism_desc: "Every AI $concept_country$ has its $ig_trade_unions$ locked onto the Anarchist path from the start of the game."
+
+  setting_pdp_fascism: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_pdp_fascism_desc #high Fascism#!#!#!"
+  setting_pdp_fascism_desc: "Every AI $concept_country$ has its $ig_armed_forces$ locked onto the Fascist path from the start of the game."
+
+  setting_pdp_ethno_nationalism: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_pdp_ethno_nationalism_desc #high Ethno-Nationalism#!#!#!"
+  setting_pdp_ethno_nationalism_desc: "Every AI $concept_country$ has its $ig_armed_forces$ locked onto the Ethno-Nationalist path from the start of the game."
+
+  setting_pdp_conservatism: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_pdp_conservatism_desc #high Conservatism#!#!#!"
+  setting_pdp_conservatism_desc: "Every AI $concept_country$ has its $ig_armed_forces$ locked onto the Conservative path from the start of the game."

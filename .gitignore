@@ -1,0 +1,16 @@
+dlc/
+soundtrack/
+fonts/
+map_data/
+
+*.code-workspace
+*.py
+*.jpg
+*.jpeg
+*.bmp
+
+changes.txt
+localizations_*.txt
+scripts_*.txt
+diff.txt
+CLAUDE.md

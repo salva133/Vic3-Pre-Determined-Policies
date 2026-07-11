@@ -1,0 +1,53 @@
+﻿# Prescribes the ideological path of every non-player country according to the
+# pdp_predetermined_policies game rule. Called once from on_game_started_after_lobby.
+#
+# The chose_* variables are interest-group scoped in vanilla: they are set on the one
+# interest group that has committed to a path, which suppresses neutral leaders for that
+# IG and keeps its matching political movements from disbanding. This effect seats each
+# marker on the interest group vanilla itself uses for that path — the Trade Unions for the
+# left-wing paths, the Armed Forces for the right-wing paths — both of which exist in
+# practically every country. The ?= guard skips any country that happens to lack the IG.
+pdp_apply_predetermined_policies = {
+	if = {
+		limit = { has_game_rule = pdp_vanguardism }
+		every_country = {
+			limit = { is_player = no }
+			ig:ig_trade_unions ?= { set_variable = chose_vanguardism }
+		}
+	}
+	else_if = {
+		limit = { has_game_rule = pdp_communism }
+		every_country = {
+			limit = { is_player = no }
+			ig:ig_trade_unions ?= { set_variable = chose_communism }
+		}
+	}
+	else_if = {
+		limit = { has_game_rule = pdp_anarchism }
+		every_country = {
+			limit = { is_player = no }
+			ig:ig_trade_unions ?= { set_variable = chose_anarchism }
+		}
+	}
+	else_if = {
+		limit = { has_game_rule = pdp_fascism }
+		every_country = {
+			limit = { is_player = no }
+			ig:ig_armed_forces ?= { set_variable = chose_fascism }
+		}
+	}
+	else_if = {
+		limit = { has_game_rule = pdp_ethno_nationalism }
+		every_country = {
+			limit = { is_player = no }
+			ig:ig_armed_forces ?= { set_variable = chose_ethno_nationalism }
+		}
+	}
+	else_if = {
+		limit = { has_game_rule = pdp_conservatism }
+		every_country = {
+			limit = { is_player = no }
+			ig:ig_armed_forces ?= { set_variable = chose_conservatism }
+		}
+	}
+}

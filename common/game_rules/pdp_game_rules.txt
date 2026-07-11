@@ -1,0 +1,20 @@
+﻿# Pre-Determined Policies
+# One game rule that prescribes an ideological path for every AI country from the
+# start of the game. Each option maps to one of the vanilla chose_* interest-group
+# markers. The default option leaves vanilla behaviour untouched.
+pdp_predetermined_policies = {
+	default = pdp_vanilla
+
+	# Vanilla: nothing is prescribed, interest groups pick their own path.
+	pdp_vanilla = {}
+
+	# Left-wing paths (seated on the Trade Unions IG).
+	pdp_vanguardism = {}
+	pdp_communism = {}
+	pdp_anarchism = {}
+
+	# Right-wing paths (seated on the Armed Forces IG).
+	pdp_fascism = {}
+	pdp_ethno_nationalism = {}
+	pdp_conservatism = {}
+}
