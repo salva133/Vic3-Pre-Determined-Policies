@@ -51,4 +51,98 @@ pdp_apply_predetermined_policies = {
 			ig:ig_armed_forces ?= { set_variable = chose_conservatism }
 		}
 	}
+	else_if = {
+		limit = { has_game_rule = pdp_historical }
+		pdp_apply_historical_policies = yes
+	}
+	else_if = {
+		limit = { has_game_rule = pdp_absolute_insanity }
+		pdp_apply_absolute_insanity = yes
+	}
+}
+
+# Seats a chose_* marker on a country's Trade Unions, the interest group vanilla uses
+# for the left-wing paths. PATH = the chose_* marker to set. Players are never touched;
+# a country lacking the interest group is skipped by the ?= guard.
+pdp_seat_left_path = {
+	if = {
+		limit = { is_player = no }
+		ig:ig_trade_unions ?= { set_variable = $PATH$ }
+	}
+}
+
+# Seats a chose_* marker on a country's Armed Forces, the stand-in this mod uses for the
+# right-wing paths. PATH = the chose_* marker to set. Players are never touched;
+# a country lacking the interest group is skipped by the ?= guard.
+pdp_seat_right_path = {
+	if = {
+		limit = { is_player = no }
+		ig:ig_armed_forces ?= { set_variable = $PATH$ }
+	}
+}
+
+# The pdp_historical option: seats each country on the ideological path its historical
+# government had settled into by 1936. Every German- and Italian-cultured nation begins
+# Fascist, so the marker holds no matter which state ends up founding Germany or Italy
+# (this also catches German-led Austria, i.e. Austrofascism). Switzerland and Luxembourg
+# are excluded despite their German culture; they keep the Conservative baseline. Every
+# country not otherwise named keeps the Conservative status quo of the interwar order.
+pdp_apply_historical_policies = {
+	every_country = {
+		limit = { is_player = no }
+		if = {
+			limit = {
+				OR = {
+					country_has_primary_culture = cu:north_german
+					country_has_primary_culture = cu:south_german
+					country_has_primary_culture = cu:east_german
+					country_has_primary_culture = cu:north_italian
+					country_has_primary_culture = cu:south_italian
+				}
+				NOR = {
+					c:SWI ?= this
+					c:LUX ?= this
+				}
+			}
+			pdp_seat_right_path = { PATH = chose_fascism }
+		}
+		else = {
+			pdp_seat_right_path = { PATH = chose_conservatism }
+		}
+	}
+
+	# Further fascist and authoritarian-right regimes, keyed on their 1836 tags.
+	c:POR ?= { pdp_seat_right_path = { PATH = chose_fascism } }			# Estado Novo
+	c:SPA ?= { pdp_seat_right_path = { PATH = chose_fascism } }			# Nationalist Spain
+	c:JAP ?= { pdp_seat_right_path = { PATH = chose_fascism } }			# Imperial Japan
+
+	# Kemalist Turkey: a one-party nationalist republic.
+	c:TUR ?= { pdp_seat_right_path = { PATH = chose_ethno_nationalism } }
+
+	# The Soviet Union: a Leninist vanguard-party state. The path sits on the Trade Unions,
+	# so the baseline Conservatism marker on its Armed Forces is cleared first.
+	c:RUS ?= {
+		if = {
+			limit = { is_player = no }
+			ig:ig_armed_forces ?= { remove_variable = chose_conservatism }
+			pdp_seat_left_path = { PATH = chose_vanguardism }
+		}
+	}
+}
+
+# The pdp_absolute_insanity option: draws one of the six paths at random, independently
+# for every AI country. random_list uses the synchronized game RNG, so the outcome is
+# deterministic per seed and safe in multiplayer.
+pdp_apply_absolute_insanity = {
+	every_country = {
+		limit = { is_player = no }
+		random_list = {
+			1 = { pdp_seat_left_path = { PATH = chose_vanguardism } }
+			1 = { pdp_seat_left_path = { PATH = chose_communism } }
+			1 = { pdp_seat_left_path = { PATH = chose_anarchism } }
+			1 = { pdp_seat_right_path = { PATH = chose_fascism } }
+			1 = { pdp_seat_right_path = { PATH = chose_ethno_nationalism } }
+			1 = { pdp_seat_right_path = { PATH = chose_conservatism } }
+		}
+	}
 }

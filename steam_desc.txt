@@ -21,8 +21,12 @@ Open the [b]Game Rules[/b] panel when you set up a game and pick one option:
 | [b]Fascism[/b] | Every AI country's [b]Armed Forces[/b] commit to the Fascist path. |
 | [b]Ethno-Nationalism[/b] | Every AI country's [b]Armed Forces[/b] commit to the Ethno-Nationalist path. |
 | [b]Conservatism[/b] | Every AI country's [b]Armed Forces[/b] commit to the Conservative path. |
+| [b]Historical[/b] | Every AI country begins on the path its 1936 government took — the Axis powers Fascist, the Soviet Union Vanguardist, Kemalist Turkey Ethno-Nationalist, and everyone else on the Conservative status quo. |
+| [b]Absolute Insanity[/b] | Every AI country is seeded with a completely random path, drawn independently for each nation. |
 
 Your own nation is never touched — you always choose your own path. In multiplayer, every human player is left free.
+
+Under the [b]Historical[/b] setting every German- and Italian-cultured nation begins Fascist, so the marker holds no matter which state ends up founding Germany or Italy. The [b]Absolute Insanity[/b] setting rolls each nation's path from the game's own synchronized randomness, so a given save seed always produces the same lunatic map.
 
 [h2]How it works[/h2]
 

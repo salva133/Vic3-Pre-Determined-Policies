@@ -17,4 +17,10 @@ pdp_predetermined_policies = {
 	pdp_fascism = {}
 	pdp_ethno_nationalism = {}
 	pdp_conservatism = {}
+
+	# Curated map: each country begins on the path its historical 1936 government took.
+	pdp_historical = {}
+
+	# Chaos: every AI country draws one of the six paths at random.
+	pdp_absolute_insanity = {}
 }
