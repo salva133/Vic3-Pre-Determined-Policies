@@ -21,3 +21,9 @@
 
   setting_pdp_conservatism: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_pdp_conservatism_desc #high Conservatism#!#!#!"
   setting_pdp_conservatism_desc: "Every AI $concept_country$ has its $ig_armed_forces$ locked onto the Conservative path from the start of the game."
+
+  setting_pdp_historical: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_pdp_historical_desc #high Historical#!#!#!"
+  setting_pdp_historical_desc: "Every AI $concept_country$ begins on the path its historical government had settled into by 1936: the Axis powers Fascist, the Soviet Union Vanguardist, Kemalist Turkey Ethno-Nationalist, and everyone else on the Conservative status quo. The 1936 regimes are seeded onto their 1836 starting nations, so Germany's marker rides on Prussia and Italy's on Sardinia-Piedmont. Left-wing paths sit on the $ig_trade_unions$, right-wing paths on the $ig_armed_forces$."
+
+  setting_pdp_absolute_insanity: "#tooltippable #tooltip:[GetPlayer.GetTooltipTag],setting_pdp_absolute_insanity_desc #high Absolute Insanity#!#!#!"
+  setting_pdp_absolute_insanity_desc: "Every AI $concept_country$ is seeded with a completely random path, drawn independently for each nation from all six ideologies. Left-wing paths sit on the $ig_trade_unions$, right-wing paths on the $ig_armed_forces$. The draw uses the game's synchronized randomness, so a given seed always produces the same mad world."
