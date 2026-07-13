@@ -84,8 +84,9 @@ pdp_seat_right_path = {
 # The pdp_historical option: seats each country on the ideological path its historical
 # government had settled into by 1936. Every German- and Italian-cultured nation begins
 # Fascist, so the marker holds no matter which state ends up founding Germany or Italy
-# (this also catches German-led Austria, i.e. Austrofascism). Every country not otherwise
-# named keeps the Conservative status quo of the interwar constitutional order.
+# (this also catches German-led Austria, i.e. Austrofascism). Switzerland and Luxembourg
+# are excluded despite their German culture; they keep the Conservative baseline. Every
+# country not otherwise named keeps the Conservative status quo of the interwar order.
 pdp_apply_historical_policies = {
 	every_country = {
 		limit = { is_player = no }
@@ -97,6 +98,10 @@ pdp_apply_historical_policies = {
 					country_has_primary_culture = cu:east_german
 					country_has_primary_culture = cu:north_italian
 					country_has_primary_culture = cu:south_italian
+				}
+				NOR = {
+					c:SWI ?= this
+					c:LUX ?= this
 				}
 			}
 			pdp_seat_right_path = { PATH = chose_fascism }
