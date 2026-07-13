@@ -82,20 +82,31 @@ pdp_seat_right_path = {
 }
 
 # The pdp_historical option: seats each country on the ideological path its historical
-# government had settled into by 1936. The regimes are keyed on the 1836 starting tags,
-# because the 1936 successor states do not exist at game start (Nazi Germany rides on
-# Prussia, Fascist Italy on Sardinia-Piedmont). Every country the curated list does not
-# name keeps the Conservative status quo of the interwar constitutional order.
+# government had settled into by 1936. Every German- and Italian-cultured nation begins
+# Fascist, so the marker holds no matter which state ends up founding Germany or Italy
+# (this also catches German-led Austria, i.e. Austrofascism). Every country not otherwise
+# named keeps the Conservative status quo of the interwar constitutional order.
 pdp_apply_historical_policies = {
 	every_country = {
 		limit = { is_player = no }
-		pdp_seat_right_path = { PATH = chose_conservatism }
+		if = {
+			limit = {
+				OR = {
+					country_has_primary_culture = cu:north_german
+					country_has_primary_culture = cu:south_german
+					country_has_primary_culture = cu:east_german
+					country_has_primary_culture = cu:north_italian
+					country_has_primary_culture = cu:south_italian
+				}
+			}
+			pdp_seat_right_path = { PATH = chose_fascism }
+		}
+		else = {
+			pdp_seat_right_path = { PATH = chose_conservatism }
+		}
 	}
 
-	# Fascist and authoritarian-right regimes.
-	c:PRU ?= { pdp_seat_right_path = { PATH = chose_fascism } }			# Nazi Germany
-	c:SAR ?= { pdp_seat_right_path = { PATH = chose_fascism } }			# Fascist Italy
-	c:AUS ?= { pdp_seat_right_path = { PATH = chose_fascism } }			# Austrofascism
+	# Further fascist and authoritarian-right regimes, keyed on their 1836 tags.
 	c:POR ?= { pdp_seat_right_path = { PATH = chose_fascism } }			# Estado Novo
 	c:SPA ?= { pdp_seat_right_path = { PATH = chose_fascism } }			# Nationalist Spain
 	c:JAP ?= { pdp_seat_right_path = { PATH = chose_fascism } }			# Imperial Japan

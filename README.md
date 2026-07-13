@@ -26,7 +26,7 @@ Open the **Game Rules** panel when you set up a game and pick one option:
 
 Your own nation is never touched — you always choose your own path. In multiplayer, every human player is left free.
 
-The **Historical** setting keys each 1936 regime to the country that holds its ground in 1836, since the later states have not formed yet: Germany's marker rides on Prussia, Italy's on Sardinia-Piedmont. The **Absolute Insanity** setting rolls each nation's path from the game's own synchronized randomness, so a given save seed always produces the same lunatic map.
+Under the **Historical** setting every German- and Italian-cultured nation begins Fascist, so the marker holds no matter which state ends up founding Germany or Italy. The **Absolute Insanity** setting rolls each nation's path from the game's own synchronized randomness, so a given save seed always produces the same lunatic map.
 
 ## How it works
 
