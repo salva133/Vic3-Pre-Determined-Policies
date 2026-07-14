@@ -1,12 +1,10 @@
 # Pre-Determined Policies
 
-**Decide which way the world will lean before the first day of your campaign.** One choice in the lobby points every AI nation down the ideological road you picked, so you spend the game reacting to a political map you already understand instead of one that ambushes you thirty years in.
+**Decide which way the world will lean before the first day of your campaign.** One choice in the lobby points every AI nation down the ideological road you picked.
 
 ## The idea
 
 In a normal Victoria 3 game you never really know who is going to turn communist, who is going to turn fascist, or when. It creeps up on you over the decades. This mod takes the guesswork off the table: you set the mood of the whole world before you press play.
-
-Pick **Communism** and the workers' movements everywhere are yours to court or crush. Pick **Fascism** and you know exactly where the storm is coming from. Either way you start the game already knowing who your friends and your enemies are going to be.
 
 ## How to use it
 
@@ -26,7 +24,7 @@ Your own nation is never touched: you always choose your own path. In multiplaye
 
 ## What it feels like in play
 
-The world doesn't flip overnight. Your choice sets the direction each AI nation drifts, and that drift plays out across the years of a campaign the same way an ordinary radicalisation would. Left-wing turns grow out of the labour movement, right-wing turns out of the establishment. Give it time and the map settles into the shape you asked for.
+The world doesn't flip overnight. Your choice sets the direction each AI nation drifts, and that drift plays out across the years of a campaign the same way an ordinary radicalisation would. Left-wing turns grow out of the labour movement, right-wing turns out of the establishment. Give it time.
 
 ## Why it exists
 
@@ -34,7 +32,6 @@ Half the fun of a grand-strategy campaign is having someone to root for and some
 
 ## Compatibility
 
-- Built for Victoria 3 1.13.
 - Multiplayer-safe. The random option uses the game's synchronised randomness, so every player ends up in the same world.
 - Adds a single game rule and overrides no base-game files, so it loads happily alongside almost anything. The only mods it could disagree with are ones that rewrite how nations pick their ideology.
 
