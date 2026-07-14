@@ -1,37 +1,47 @@
 [h1]Pre-Determined Policies[/h1]
 
-[b]A game-rule mod for Victoria 3[/b] that decides, before the campaign even begins, which way every AI country will lean — so the political map is something you can plan around instead of something you discover the hard way.
+[b]Decide which way the world will lean before the first day of your campaign.[/b] One choice in the lobby points every AI nation down the ideological road you picked, so you spend the game reacting to a political map you already understand instead of one that ambushes you thirty years in.
 
 [h2]The idea[/h2]
 
-Victoria 3 quietly keeps track of when a nation commits to a radical ideology. The moment a country picks its path, the game plants a hidden marker on the interest group that carried it there — the Trade Unions turning communist, a governing faction turning fascist, and so on. Normally those markers appear on their own, deep into a campaign, and you never see them coming.
+In a normal Victoria 3 game you never really know who is going to turn communist, who is going to turn fascist, or when. It creeps up on you over the decades. This mod takes the guesswork off the table: you set the mood of the whole world before you press play.
 
-This mod hands you the pen. Add a single game rule in the lobby, choose one ideology, and every AI nation is seeded with that same marker from day one. Pick [b]Communism[/b] and the workers' movements of the world will be yours to court or crush; pick [b]Fascism[/b] and you know exactly where the storm is coming from. Either way, you start the game knowing who your friends and your enemies are going to be.
+Pick [b]Communism[/b] and the workers' movements everywhere are yours to court or crush. Pick [b]Fascism[/b] and you know exactly where the storm is coming from. Either way you start the game already knowing who your friends and your enemies are going to be.
 
-[h2]Using it[/h2]
+[h2]How to use it[/h2]
 
-Open the [b]Game Rules[/b] panel when you set up a game and pick one option:
+Open the [b]Game Rules[/b] panel when you set up a new game and choose one option:
 
-| Option | Effect |
-| --- | --- |
-| [b]Vanilla[/b] [url=default]i[/url][/i] | Nothing is prescribed. Every country finds its own way, exactly as in the base game. |
-| [b]Vanguardism[/b] | Every AI country's [b]Trade Unions[/b] commit to the Vanguardist path. |
-| [b]Communism[/b] | Every AI country's [b]Trade Unions[/b] commit to the Communist path. |
-| [b]Anarchism[/b] | Every AI country's [b]Trade Unions[/b] commit to the Anarchist path. |
-| [b]Fascism[/b] | Every AI country's [b]Armed Forces[/b] commit to the Fascist path. |
-| [b]Ethno-Nationalism[/b] | Every AI country's [b]Armed Forces[/b] commit to the Ethno-Nationalist path. |
-| [b]Conservatism[/b] | Every AI country's [b]Armed Forces[/b] commit to the Conservative path. |
-| [b]Historical[/b] | Every AI country begins on the path its 1936 government took — the Axis powers Fascist, the Soviet Union Vanguardist, Kemalist Turkey Ethno-Nationalist, and everyone else on the Conservative status quo. |
-| [b]Absolute Insanity[/b] | Every AI country is seeded with a completely random path, drawn independently for each nation. |
+[list]
+[*][b]Vanilla[/b] (default) — nothing is prescribed. Every country finds its own way, exactly like the base game.
+[*][b]Vanguardism[/b] — every AI nation leans toward the Vanguardist left.
+[*][b]Communism[/b] — every AI nation leans Communist.
+[*][b]Anarchism[/b] — every AI nation leans Anarchist.
+[*][b]Fascism[/b] — every AI nation tilts Fascist.
+[*][b]Ethno-Nationalism[/b] — every AI nation tilts Ethno-Nationalist.
+[*][b]Conservatism[/b] — every AI nation settles into the Conservative status quo.
+[*][b]Historical[/b] — each nation starts on the path its real 1936 government took: the Axis powers Fascist, the Soviet Union Vanguardist, Kemalist Turkey Ethno-Nationalist, and everyone else conservative.
+[*][b]Absolute Insanity[/b] — every nation is rolled at random, one independent draw each, for a world that makes no sense at all.
+[/list]
 
-Your own nation is never touched — you always choose your own path. In multiplayer, every human player is left free.
+Your own nation is never touched: you always choose your own path. In multiplayer every human player stays free too, and only the AI is steered.
 
-[h2]How it works[/h2]
+[h2]What it feels like in play[/h2]
 
-The chosen marker is applied once to every non-player country. Because the base game keeps these markers on interest groups rather than on countries, the mod seats each one on an interest group nearly every nation has: the left-wing paths on the [b]Trade Unions[/b] — exactly where vanilla puts them — and the right-wing paths on the [b]Armed Forces[/b], a dependable stand-in for the governing group vanilla would otherwise pick out for itself. Any country that somehow lacks the group is simply skipped.
-
-A marked interest group turns away from path-neutral moderates: vanilla cuts the leader weight of every off-path stance there — the moderates included — to a tenth, so the group keeps putting forward leaders of the ideology you chose. That is the same lever the base game pulls when a country radicalizes on its own, so the world leans toward the path you picked over the years of a campaign; it does not flip overnight.
+The world doesn't flip overnight. Your choice sets the direction each AI nation drifts, and that drift plays out across the years of a campaign the same way an ordinary radicalisation would. Left-wing turns grow out of the labour movement, right-wing turns out of the establishment. Give it time and the map settles into the shape you asked for.
 
 [h2]Why it exists[/h2]
 
 Half the fun of a grand-strategy campaign is having someone to root for and someone to root against. Vanilla makes you wait a few decades to find out which is which. This is for players who would rather set the stage first and then go to war with it.
+
+[h2]Compatibility[/h2]
+
+[list]
+[*]Built for Victoria 3 1.13.
+[*]Multiplayer-safe. The random option uses the game's synchronised randomness, so every player ends up in the same world.
+[*]Adds a single game rule and overrides no base-game files, so it loads happily alongside almost anything. The only mods it could disagree with are ones that rewrite how nations pick their ideology.
+[/list]
+
+[h2]Feedback[/h2]
+
+Spotted an odd result or a mod conflict? Leave a comment and I'll take a look.
