@@ -1,12 +1,10 @@
 [h1]Pre-Determined Policies[/h1]
 
-[b]Decide which way the world will lean before the first day of your campaign.[/b] One choice in the lobby points every AI nation down the ideological road you picked, so you spend the game reacting to a political map you already understand instead of one that ambushes you thirty years in.
+[b]Decide which way the world will lean before the first day of your campaign.[/b] One choice in the lobby points every AI nation down the ideological road you picked.
 
 [h2]The idea[/h2]
 
 In a normal Victoria 3 game you never really know who is going to turn communist, who is going to turn fascist, or when. It creeps up on you over the decades. This mod takes the guesswork off the table: you set the mood of the whole world before you press play.
-
-Pick [b]Communism[/b] and the workers' movements everywhere are yours to court or crush. Pick [b]Fascism[/b] and you know exactly where the storm is coming from. Either way you start the game already knowing who your friends and your enemies are going to be.
 
 [h2]How to use it[/h2]
 
@@ -28,7 +26,7 @@ Your own nation is never touched: you always choose your own path. In multiplaye
 
 [h2]What it feels like in play[/h2]
 
-The world doesn't flip overnight. Your choice sets the direction each AI nation drifts, and that drift plays out across the years of a campaign the same way an ordinary radicalisation would. Left-wing turns grow out of the labour movement, right-wing turns out of the establishment. Give it time and the map settles into the shape you asked for.
+The world doesn't flip overnight. Your choice sets the direction each AI nation drifts, and that drift plays out across the years of a campaign the same way an ordinary radicalisation would. Left-wing turns grow out of the labour movement, right-wing turns out of the establishment. Give it time.
 
 [h2]Why it exists[/h2]
 
@@ -37,7 +35,6 @@ Half the fun of a grand-strategy campaign is having someone to root for and some
 [h2]Compatibility[/h2]
 
 [list]
-[*]Built for Victoria 3 1.13.
 [*]Multiplayer-safe. The random option uses the game's synchronised randomness, so every player ends up in the same world.
 [*]Adds a single game rule and overrides no base-game files, so it loads happily alongside almost anything. The only mods it could disagree with are ones that rewrite how nations pick their ideology.
 [/list]
